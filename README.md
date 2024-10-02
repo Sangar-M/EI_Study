@@ -1,5 +1,5 @@
 EI_Study Coding Assignments
-The above is an assignment repository with two coding assignments focused on software design patterns and a .
+The above is an assignment repository with two coding assignments focused on software design patterns and a Mars Rover Programming.
 
 Table of Contents
 Assignment 1: Design Patterns
