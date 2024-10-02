@@ -1,0 +1,23 @@
+## Language Localization System Overview
+
+The **Language Localization System** is designed to provide user-specific greetings based on their language preference. It utilizes the **Strategy Pattern** to allow for dynamic selection of greeting messages. When the user runs the program, they are prompted to enter their preferred language (English, Spanish, or French). Based on the input, the system selects the appropriate localization strategy to deliver the corresponding greeting. This design not only supports multiple languages but also emphasizes the importance of cultural sensitivity in software applications.
+
+### Class and Interface Explanations
+
+1. **LocalizationStrategy (Interface)**:
+   - This interface defines the contract for localization strategies. It contains a single method, `getGreeting()`, which returns a greeting message. Concrete localization classes will implement this interface to provide greetings in different languages.
+
+2. **EnglishLocalization (Class)**:
+   - This class implements the `LocalizationStrategy` interface and provides the greeting message in English. The `getGreeting()` method returns the string "Hello!". This class represents the English localization strategy for the application.
+
+3. **SpanishLocalization (Class)**:
+   - Similar to `EnglishLocalization`, this class also implements the `LocalizationStrategy` interface. It provides the greeting message in Spanish by returning the string "¡Hola!" in its `getGreeting()` method. This class represents the Spanish localization strategy.
+
+4. **FrenchLocalization (Class)**:
+   - This class also implements the `LocalizationStrategy` interface and provides the greeting message in French. The `getGreeting()` method returns the string "Bonjour!". This class represents the French localization strategy.
+
+5. **LanguageContext (Class)**:
+   - This class manages the localization strategy. It holds a reference to a `LocalizationStrategy` object and provides a method, `setLocalizationStrategy()`, to set the strategy. The `greetUser()` method checks if the strategy is set and returns the appropriate greeting. If the strategy is not set, it throws an `IllegalStateException`, ensuring that the system behaves predictably.
+
+6. **LanguageLocalization (Main Class)**:
+   - This is the main class where the program execution begins. It creates an instance of `LanguageContext` and uses a `Scanner` to get user input for their preferred language. Based on the input, it sets the appropriate localization strategy (English, Spanish, or French). The `greetUser()` method is then called to print the greeting. Exception handling is incorporated to manage any errors gracefully, and the `Scanner` resource is closed at the end to prevent memory leaks.

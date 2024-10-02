@@ -1,0 +1,17 @@
+Payment Processing System
+This project demonstrates the Strategy Design Pattern through a Payment Processing System that allows users to choose different payment methods based on cultural preferences.
+
+Classes and Interface
+PaymentStrategy: This interface defines a common contract for payment methods, ensuring that any payment implementation provides a pay(int amount) method to process transactions.
+
+CreditCardPayment: This class implements the PaymentStrategy interface and simulates credit card payment processing. It includes validation to ensure the payment amount is greater than zero and outputs a confirmation message upon successful payment.
+
+PayPalPayment: Another implementation of the PaymentStrategy interface, this class manages PayPal transactions. Like CreditCardPayment, it includes validation for payment amounts and prints a confirmation message when the transaction is completed.
+
+ShoppingCart: This class is responsible for managing a collection of items added by the user. It allows users to add items, set a payment strategy, and handle the checkout process by calculating the total amount and invoking the appropriate payment method.
+
+Main: The entry point of the application, this class interacts with the user through the console. It prompts the user to enter item prices, allows multiple items to be added, and provides options for selecting a payment method, ensuring the overall flow of the payment processing system.
+
+To run the project, ensure you have Java installed on your system. You can compile the Java files using the command javac *.java, followed by running the main class with java Main. The program prompts users to enter item prices, allows for multiple items to be added, and provides options for selecting a payment method along with the necessary details, such as a credit card number or PayPal email.
+
+Exception handling is incorporated throughout the application to manage invalid inputs, such as non-positive payment amounts or an uninitialized payment strategy, ensuring a smooth user experience. This implementation showcases creativity by allowing easy extension for adding new payment methods, highlighting the flexibility and scalability of the Strategy Design Pattern.

@@ -1,0 +1,8 @@
+Home Automation System (Command Pattern)
+This project demonstrates the Command Design Pattern through a home automation system where users can control devices such as lights and fans using a remote control. The system allows users to turn devices on and off and provides an undo functionality to reverse the last operation. The implementation follows the Command Pattern, which encapsulates commands as objects, thus allowing for more flexible and maintainable code.
+
+In this project, the RemoteControl.java class acts as the invoker that executes commands, while the command classes—LightOnCommand.java, LightOffCommand.java, FanOnCommand.java, and FanOffCommand.java—represent concrete commands that encapsulate the actions to be performed on the respective devices. This design adheres to the SOLID principles by separating concerns into different classes, ensuring that each class has a specific responsibility.
+
+To run the program, users need to execute the HomeAutomationSystem.java file and follow the interactive menu to control the devices. The menu includes options to turn devices on and off, undo the last command, or exit the program. Exception handling is incorporated to manage invalid command executions, ensuring that the program remains stable and user-friendly even when unexpected inputs are provided.
+
+Overall, this implementation effectively showcases the Command Design Pattern, highlighting its benefits in creating a flexible and organized home automation system.

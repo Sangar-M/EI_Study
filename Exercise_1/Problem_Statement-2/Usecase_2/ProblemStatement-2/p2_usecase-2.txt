@@ -1,0 +1,30 @@
+# Use Case 2: Decorator Pattern
+
+## Overview
+This use case demonstrates the Decorator design pattern in Java. The scenario involves a `BasicCoffee` beverage, where we can dynamically add toppings like milk and sugar without altering the original class. The Decorator Pattern allows for extending an object's functionality at runtime, providing a flexible alternative to subclassing for extending behavior.
+
+## Classes
+
+### Coffee
+The `Coffee` interface represents a coffee beverage. It defines two essential methods: `cost()`, which returns the cost of the coffee, and `description()`, which returns the description of the coffee. This abstraction allows different types of coffee to be treated uniformly while allowing specific implementations to define their own behavior.
+
+### BasicCoffee
+`BasicCoffee` is a concrete implementation of the `Coffee` interface that represents a basic coffee beverage. It provides the implementation for both the `cost()` and `description()` methods, returning a predefined cost of $2.00 and a description of "Basic Coffee". This class serves as the foundation for creating more complex coffee beverages by applying decorators.
+
+### CoffeeDecorator
+The `CoffeeDecorator` is an abstract class that implements the `Coffee` interface. It holds a reference to a `Coffee` object, allowing it to add new functionalities while delegating the existing functionalities to the decorated coffee. The `cost()` and `description()` methods are overridden to call the respective methods of the decorated coffee, maintaining the existing behavior while enabling the addition of new features.
+
+### MilkDecorator
+The `MilkDecorator` is a concrete decorator that adds milk to the coffee. It extends the `CoffeeDecorator` class and provides its own implementation of the `cost()` and `description()` methods. When the `cost()` method is called, it adds an additional $0.50 to the base cost, while the `description()` method appends "Milk" to the existing description. This allows for enhanced customization of coffee beverages.
+
+### SugarDecorator
+Similar to the `MilkDecorator`, the `SugarDecorator` adds sugar to the coffee. It also extends the `CoffeeDecorator` class and overrides the `cost()` and `description()` methods. The additional cost for sugar is $0.20, and it appends "Sugar" to the coffee's description. This structure allows multiple decorators to be combined, enhancing the flexibility of coffee preparation.
+
+### Main
+The `Main` class serves as the entry point for the application. It prompts the user for their coffee order, allowing them to specify whether they want to add milk or sugar. Based on the user’s choices, it constructs the final coffee order by wrapping the `BasicCoffee` object with the appropriate decorators. The final order and total cost are then displayed to the user.
+
+## Exception Handling
+The code incorporates exception handling to manage invalid user input and potential errors during the execution. The use of try-catch blocks ensures that any exceptions are caught and logged appropriately using `System.err`, providing clear visibility of issues while maintaining the program's robustness.
+
+## Usage
+To use this application, compile the Java files and run the `Main` class. The user will be prompted to specify their coffee preferences, including whether they want to add milk and sugar. The application will then display the final order along with the total cost, showcasing the flexibility and functionality of the Decorator Pattern in a real-world scenario.

@@ -1,0 +1,15 @@
+Use Case 1: Adapter Pattern
+
+This use case illustrates the Adapter design pattern implemented in Java. The scenario involves a TemperatureSensor that measures temperature in Celsius and needs to integrate seamlessly with a TemperatureDisplay that presents temperature readings in Fahrenheit. This situation exemplifies the utility of the Adapter pattern, which allows incompatible interfaces to work together.
+
+The implementation consists of several key classes, each serving a distinct purpose. The TemperatureSensor class represents the temperature sensor, providing a method called getTemperatureInCelsius() that returns the current temperature in Celsius. On the other hand, the TemperatureDisplay is defined as an interface that declares a method displayTemperature(double temperatureInFahrenheit) to be used for displaying temperature readings.
+
+To bridge the gap between these two classes, we utilize the CelsiusToFahrenheitAdapter. This adapter takes the output from the TemperatureSensor and converts it into Fahrenheit before passing it to the TemperatureDisplay. The displayTemperature(double temperatureInFahrenheit) method in the adapter performs the conversion from Celsius to Fahrenheit and calls the display method accordingly.
+
+The Main class serves as the entry point of the application. It facilitates user interaction by prompting for temperature input in Celsius. Upon receiving the input, the application uses the adapter to convert the temperature into Fahrenheit and display the result to the user.
+
+The code incorporates exception handling mechanisms to manage invalid user input and potential errors during the temperature conversion process. Any issues encountered are logged through System.err, ensuring that error messages are visible and can be addressed promptly.
+
+To run this application, begin by compiling the Java files. After successful compilation, execute the Main class. You will be prompted to input a temperature in Celsius. Upon entering the value, the application will convert it into Fahrenheit and display the converted temperature.
+
+The implementation adheres to best practices in software development. Each class is organized into separate files, promoting modularity and clarity. Exception handling is woven throughout the code to gracefully manage potential errors, enhancing the overall robustness of the application. Furthermore, the code structure is designed for clarity and maintainability, making it easier to understand and extend in the future.

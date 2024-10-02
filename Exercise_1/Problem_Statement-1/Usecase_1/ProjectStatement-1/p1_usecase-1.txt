@@ -1,0 +1,20 @@
+# Weather Station - Observer Pattern
+
+## Overview
+This project demonstrates the Observer design pattern through a simple Weather Station application. The application allows the `WeatherData` class, acting as the subject, to notify various observers, such as display elements, when weather conditions change. This interaction is crucial in applications where one entity's state must be communicated to multiple dependent entities, making it a prime example of the Observer pattern.
+
+## Components
+The project consists of several key components. The **WeatherSubject interface** defines the essential methods for registering, removing, and notifying observers. The **WeatherData class** implements the WeatherSubject interface and manages the list of observers while providing the logic to notify them of any changes in weather conditions. Observers are required to implement the **WeatherObserver interface**, which defines the method that they must use to receive updates. In this implementation, the **CurrentConditionsDisplay class** is a concrete observer that displays the current temperature and humidity. The **Main class (WeatherStation)** serves as the entry point for the application, demonstrating the functionality by creating instances of `WeatherData` and `CurrentConditionsDisplay`, and updating weather data to show how the observers react.
+
+## Key Features
+This project showcases a behavioral design pattern, specifically the Observer pattern, which facilitates effective communication between the WeatherData and its observers. By decoupling the subject from its observers, the system gains flexibility, allowing new observers to be added or removed without impacting the core functionality of the subject. Furthermore, the implementation includes basic exception handling in the `main` method, ensuring that the application can gracefully manage potential errors when updating weather data, thereby enhancing its reliability.
+
+## How to Run
+To run the application, ensure you have Java installed on your machine. Compile the `WeatherStation.java` file, and then execute the `WeatherStation` class. Upon running the program, you will witness the weather updates reflected in the output, demonstrating the Observer pattern in action.
+
+## Example Output
+When the application is executed, the output will display the current weather conditions, such as:
+```
+Current conditions: 80.00°F and 65.00% humidity
+Current conditions: 82.00°F and 70.00% humidity
+```
